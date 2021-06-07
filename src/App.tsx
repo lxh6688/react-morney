@@ -22,34 +22,34 @@ const Main = styled.div`
 
 function App() {
   return (
-      <Router>
-        <Wrapper>
-          <Main>
-            <Switch>
-              <Route path="/tags">
-                <Tags />
-              </Route>
-              <Route path="/money">
-                <Money />
-              </Route>
-              <Route path="/statistics">
-                <Statistics />
-              </Route>
-              <Redirect exact from="/" to="/money"></Redirect>
-              <Route path="*">
-                <NoMatch />
-              </Route>
-            </Switch>
-          </Main>
-          <Nav/>
-        </Wrapper>
-      </Router>
+    <Router>
+      <Wrapper>
+        <Main>
+          <Switch>
+            <Route path="/tags">
+              <Tags/>
+            </Route>
+            <Route path="/money">
+              <Money/>
+            </Route>
+            <Route path="/statistics">
+              <Statistics/>
+            </Route>
+            <Redirect exact from="/" to="/money"></Redirect>
+            <Route path="*">
+              <NoMatch/>
+            </Route>
+          </Switch>
+        </Main>
+        <Nav/>
+      </Wrapper>
+    </Router>
   );
 }
 
 function NoMatch() {
   return (
-      <div>页面不存在，你丫输错地址了吧！</div>
+    <div>页面不存在，你丫输错地址了吧！</div>
   );
 }
 
