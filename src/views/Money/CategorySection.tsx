@@ -3,21 +3,24 @@ import React, {useState} from "react";
 
 const Wrapper = styled.section`
   font-size: 24px;
-  > ul{
-    display:flex;
-    background:#c4c4c4;
+
+  > ul {
+    display: flex;
+    background: #c4c4c4;
+
     > li {
       width: 50%;
-      text-align:center;
+      text-align: center;
       padding: 16px 0;
-      position:relative;
-      &.selected::after{
+      position: relative;
+
+      &.selected::after {
         content: '';
-        display:block;
+        display: block;
         height: 3px;
-        background:#333;
-        position:absolute;
-        bottom:0;
+        background: #333;
+        position: absolute;
+        bottom: 0;
         width: 100%;
         left: 0;
       }
@@ -34,8 +37,10 @@ const CategorySection: React.FC = () => {
     <Wrapper>
       <ul>
         {categoryList.map(c =>
-          <li className={category === c ? 'selected' : ''}
-              onClick={() => {setCategory(c)}}
+          <li key={c} className={category === c ? 'selected' : ''}
+              onClick={() => {
+                setCategory(c)
+              }}
           >{categoryMap[c]}</li>
         )}
       </ul>
