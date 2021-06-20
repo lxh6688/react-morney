@@ -26,7 +26,13 @@ const useTags = () => { // 封装一个自定义 Hook
     tagsClone.splice(index, 1, {id: id, name: obj.name} )
     setTags(tagsClone)
   }
-  return {tags, setTags, findTag, updateTag}
+  const deleteTag = (id: number) => {
+    const index = findTagIndex(id)
+    const tagsClone = JSON.parse(JSON.stringify(tags))
+    tagsClone.splice(index, 1)
+    setTags(tagsClone)
+  }
+  return {tags, setTags, findTag, updateTag, deleteTag}
 }
 
 export {useTags}
