@@ -1,14 +1,14 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef} from 'react';
+
 
 export const useUpdate = (fn: () => void, deps: any[]) => {
-  const count = useRef(0)
+  const count = useRef(0);
   useEffect(() => {
-    count.current += 1
-  })
+    count.current += 1;
+  });
   useEffect(() => {
-    if(count.current > 1) {
-      fn()
+    if (count.current > 1) {
+      fn();
     }
-  }, deps)
-}
-
+  }, deps); // 不可变数据
+};
