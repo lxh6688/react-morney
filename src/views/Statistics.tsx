@@ -35,7 +35,7 @@ function Statistics() {
   const hash: {[K: string] : RecordItem[]} = {}
   const selectedRecords = records.filter(r => r.category === category)
 
-  selectedRecords.map( r => {
+  selectedRecords.forEach( r => {
     const key = day(r.createdAt).format('YYYY-MM-DD')
     if(!(key in hash)){
       hash[key] = []
@@ -44,9 +44,9 @@ function Statistics() {
   })
 
   const array = Object.entries(hash).sort((a,b) => {
-   if(a[0] === b [0]) return 0
-   if(a[0] > b [0]) return 1
-   if(a[0] < b [0]) return -1
+   if(a[0] === b[0]) return 0
+   if(a[0] > b[0]) return 1
+   if(a[0] < b[0]) return -1
     return 0
   })
   return (
